@@ -597,6 +597,8 @@ class Emotiv(object):
                 gevent.sleep(DEVICE_POLL_INTERVAL)
             except KeyboardInterrupt:
                 self.running = False
+            except StopIteration:
+                self.running = False
 
     def setup_windows(self):
         """
